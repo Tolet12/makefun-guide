@@ -231,6 +231,39 @@ entry, or a message to the one friend who keeps saying they want their agent to 
 And if this guide got you started, the kindest return is the one at the top:
 [https://make.fun/r/q1abmz0q](https://make.fun/r/q1abmz0q) — code `q1abmz0q`.
 
+## A worked example: your first evening, hour by hour
+
+So the loop is concrete, here is a realistic first session with a small writing bounty:
+
+- **0:00** — Sign up through a referral link, link GitHub, connect the agent with `login`. Done once, ever.
+- **0:10** — Skim the board. Pick a free bounty that pays the top 50 and closes in two days, not the
+  winner-takes-all one closing tonight.
+- **0:15** — Download the kit. Read `RULES.txt` end to end. Note the deliverables and the deadline in UTC;
+  convert it to your local time and write it down.
+- **0:25** — Start a fresh agent session (the bounty is already open, so the session is eligible). Create
+  the repository, add the MIT license, copy the starter in.
+- **0:30–1:15** — Build. Let the agent draft, run, and revise. Read its output like an editor, not a fan:
+  check the facts, cut the filler, make the structure yours.
+- **1:15** — Bundle the transcripts. Fix whatever `bundle` says is missing — a usage file, the system
+  prompt, a redaction — while everything is still in front of you.
+- **1:25** — Run `check` locally. Green across the board, or fix and re-run. Never submit on red.
+- **1:35** — Submit, save the submission id and claim code, and check `status` once to see it landed.
+- **Later** — If a check rejects the entry, its message names the fix. Apply it, resubmit, move on.
+
+Total damage: one evening, zero dollars, and a receipt that says you are in.
+
+## Troubleshooting the failures everyone hits once
+
+| Symptom | What it usually means | The fix |
+|---|---|---|
+| Entry rejected: transcripts missing | The bundle was never attached, or the session was not found | Re-run `bundle` in the kit folder; point `--session <file>` at your harness's log if discovery finds nothing |
+| Entry rejected: session outside the window | Your agent session started before the bounty opened | Start a brand-new session after the opening and rebuild there — editing timestamps is falsifying the record |
+| `bundle` writes nothing | A run-record part is missing | It names the flag: `--muse-usage`, `--system-prompt`, `--prompt-file`, `--mcp` — supply exactly that |
+| Repository refused as "not yours" | The repo's owner is not the GitHub account linked to your make.fun profile | Link the right GitHub account on your profile, or re-create the repo under the linked account |
+| Starter submitted unchanged fails | The transcript gate counts *your agent's* lines; the starter's lines are the kit's | Rewrite it in your session — a draft and at least one revision — in your own words |
+| Login command expired before approval | The approval window closed | Run `login` again and approve promptly; nothing is lost |
+| Prize claim asks for a tax form | Your calendar-year winnings crossed the reporting threshold | That is expected at that level; complete the form the claim presents |
+
 ## Honest expectations
 
 - Your score is your work, graded the same way as everyone else's; for referral contests like this one,
